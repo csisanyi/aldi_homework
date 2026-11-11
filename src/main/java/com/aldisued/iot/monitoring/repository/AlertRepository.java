@@ -10,7 +10,6 @@ import java.util.UUID;
 
 public interface AlertRepository extends JpaRepository<Alert, String> {
 
-  @Query(value = "SELECT * FROM alerts WHERE sensor_id = :sensorId ORDER BY timestamp DESC LIMIT 1", nativeQuery = true)
-  Alert findFirstBySensorIdOrderByTimestampDesc(@Param("sensorId") UUID sensorId);
+  Alert findFirstBySensorIdOrderByTimestampDesc(UUID sensorId);
 
 }
